@@ -1,4 +1,4 @@
-# szyc-vue-components
+# lr-vue-components
 
 ## Project setup
 ```
