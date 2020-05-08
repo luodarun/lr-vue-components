@@ -17,7 +17,6 @@ module.exports = function(source) {
   let id = 0; // demo 的 id
   let output = []; // 输出的内容
   let start = 0; // 字符串开始位置
-  console.log("content", content);
   let commentStart = content.indexOf(startTag);
   let commentEnd = content.indexOf(endTag, commentStart + startTagLen);
   while (commentStart !== -1 && commentEnd !== -1) {
@@ -46,7 +45,6 @@ module.exports = function(source) {
   // 仅允许在 demo 不存在时，才可以在 Markdown 中写 script 标签
   // todo: 优化这段逻辑
   let pageScript = "";
-  console.log("componenetsString", componenetsString);
   if (componenetsString) {
     pageScript = `<script>
       export default {
