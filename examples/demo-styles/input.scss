@@ -1,0 +1,65 @@
+.demo-input {
+  .lr-select .lr-input {
+    width: 130px;
+  }
+  .lr-input {
+    width: 180px;
+  }
+  .lr-textarea {
+    width: 414px;
+  }
+  .lr-input-group {
+    width: 100%;
+  }
+  .demo-input-size {
+    .lr-input {
+      vertical-align: top;
+      margin: 0 10px 10px 0;
+    }
+  }
+  .input-with-select .lr-input-group__prepend {
+    background-color: #fff;
+  }
+  .demo-autocomplete {
+    text-align: center;
+
+    .sub-title {
+      margin-bottom: 10px;
+      font-size: 14px;
+      color: #8492a6;
+    }
+
+    .lr-col:not(:last-child) {
+      border-right: 1px solid rgba(224, 230, 237, 0.5);
+    }
+
+    .lr-autocomplete {
+      text-align: left;
+    }
+  }
+}
+.lr-autocomplete-suggestion.my-autocomplete {
+  li {
+    line-height: normal;
+    padding-top: 7px;
+    padding-bottom: 7px;
+
+    .name {
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+    .addr {
+      font-size: 12px;
+      color: #b4b4b4;
+    }
+    .highlighted .addr {
+      color: #ddd;
+    }
+  }
+}
+.demo-input-suffix {
+  margin-bottom: 15px;
+  .lr-input {
+    margin-right: 15px;
+  }
+}

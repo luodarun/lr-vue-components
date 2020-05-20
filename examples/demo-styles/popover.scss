@@ -1,0 +1,11 @@
+.demo-block.demo-popover {
+  .lr-popover + .lr-popover {
+    margin-left: 10px;
+  }
+  .lr-input {
+    width: 360px;
+  }
+  .lr-button {
+    margin-left: 10px;
+  }
+}

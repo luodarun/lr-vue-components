@@ -1,0 +1,22 @@
+{
+  "autocomplete": "./packages/autocomplete/index.js",
+  "input": "./packages/input/index.js",
+  "checkbox": "./packages/checkbox/index.js",
+  "checkbox-button": "./packages/checkbox-button/index.js",
+  "checkbox-group": "./packages/checkbox-group/index.js",
+  "select": "./packages/select/index.js",
+  "option": "./packages/option/index.js",
+  "option-group": "./packages/option-group/index.js",
+  "button": "./packages/button/index.js",
+  "button-group": "./packages/button-group/index.js",
+  "table": "./packages/table/index.js",
+  "table-column": "./packages/table-column/index.js",
+  "popover": "./packages/popover/index.js",
+  "tooltip": "./packages/tooltip/index.js",
+  "tag": "./packages/tag/index.js",
+  "icon": "./packages/icon/index.js",
+  "row": "./packages/row/index.js",
+  "col": "./packages/col/index.js",
+  "scrollbar": "./packages/scrollbar/index.js",
+  "index": "./packages/index.js"
+}

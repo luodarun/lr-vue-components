@@ -1,0 +1,91 @@
+{
+  "开发指南": [
+    {
+      "name": "site-index",
+      "path": "/"
+    },
+    {
+      "name": "introduce",
+      "path": "/introduce",
+      "desc": "介绍"
+    },
+    {
+      "name": "start",
+      "path": "/start",
+      "desc": "快速上手"
+    },
+    {
+      "name": "index",
+      "isMobile": "1",
+      "path": "/index",
+      "type": "pages"
+    }
+  ],
+  "组件": [
+    {
+      "desc": "基础组件",
+      "isMobile": "1",
+      "items": [
+        {
+          "desc": "Icon 图标",
+          "name": "icon",
+          "isMobile": "1",
+          "path": "/icon"
+        },
+        {
+          "desc": "Button 按钮",
+          "name": "button",
+          "isMobile": "1",
+          "path": "/button"
+        },
+        {
+          "desc": "Tag 标签",
+          "name": "tag",
+          "path": "/tag"
+        },
+        {
+          "desc": "Layout 布局",
+          "name": "layout",
+          "isMobile": "1",
+          "path": "/layout"
+        },
+        {
+          "desc": "Tooltip 布局",
+          "name": "tooltip",
+          "isMobile": "1",
+          "path": "/tooltip"
+        },
+        {
+          "desc": "Popover 布局",
+          "name": "popover",
+          "path": "/popover"
+        },
+        {
+          "desc": "Table 布局",
+          "name": "table",
+          "path": "/table"
+        }
+      ]
+    },
+    {
+      "desc": "表单组件",
+      "items": [
+        {
+          "desc": "CheckBox 复选框",
+          "name": "checkbox",
+          "path": "/checkbox"
+        },
+        {
+          "desc": "Input 复选框",
+          "name": "input",
+          "path": "/input"
+        },
+        {
+          "desc": "Select 复选框",
+          "name": "select",
+          "path": "/select"
+        }
+      ]
+    }
+  ]
+}
