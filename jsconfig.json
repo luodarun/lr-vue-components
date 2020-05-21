@@ -1,0 +1,9 @@
+{ 
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+        "lr-ui/*": ["*"]
+    }
+  },
+  "exclude": ["node_modules", "dist"]
+}

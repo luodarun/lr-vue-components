@@ -64,6 +64,11 @@
           "desc": "Table 布局",
           "name": "table",
           "path": "/table"
+        },
+        {
+          "desc": "EllipsisFont 布局",
+          "name": "ellipsisFont",
+          "path": "/ellipsisFont"
         }
       ]
     },
