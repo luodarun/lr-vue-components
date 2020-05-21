@@ -1,76 +1,99 @@
-import { getBrowserType } from "lr-ui/src/utils/util";
+import { getBrowserType, formatStr } from "lr-ui/src/utils/util";
+import LrTooltip from "lr-ui/packages/tooltip";
 export default {
-  functional: true,
   name: "LrEllipsisFont",
-  render(h, context) {
-    let row = context.props.row || 1;
-    let fontSize = context.props.fontSize || 16;
-    if (row > 1) {
-      const browType = getBrowserType();
-      if (browType === "Chrome") {
-        // 谷歌
-        // return 'MultiChrome'
-        return h(
+  components: { LrTooltip },
+  props: {
+    type: {
+      type: String,
+      default: "2"
+    },
+    num: {
+      type: Number,
+      default: 1
+    },
+    tooltipFlag: {
+      type: Boolean,
+      default: false
+    }
+  },
+  data() {
+    return {
+      browType: getBrowserType()
+    };
+  },
+  mounted() {
+    if (
+      (this.type === "2" && this.num > 1 && this.browType !== "Chrome") ||
+      this.type !== "2"
+    ) {
+      formatStr(this.$el, this.type, this.num);
+    }
+  },
+  render(h) {
+    let tempNodes = [];
+    if (this.type !== "2") {
+      tempNodes.push(
+        h(
           "div",
           {
-            class: "ellipse-font-wrap multer-ellipsis",
-            style: {
-              "-webkit-line-clamp": row
-            }
+            class: "lr-ellipse-font"
           },
-          [context.children]
-        );
-      } else {
-        return h(
-          "div",
-          {
-            class: "ellipse-font-wrap multer-ellipsis-no",
-            style: {
-              fontSize: fontSize + "px",
-              maxHeight: fontSize * row * 1.25 + "px",
-              lineHeight: fontSize * 1.25 + "px"
-            }
-          },
-          [
-            h("div", {
-              class: "before",
-              style: {
-                height: fontSize * row * 1.25 + "px",
-                width: fontSize * 1.25 + "px"
-              }
-            }),
+          this.$slots.default
+        )
+      );
+    } else {
+      if (this.num > 1) {
+        if (this.browType === "Chrome") {
+          tempNodes.push(
             h(
               "div",
               {
-                class: "text",
+                class: "lr-ellipse-font ellipse-font-wrap multer-ellipsis",
                 style: {
-                  marginLeft: 0 - fontSize * 1.25 + "px"
+                  "-webkit-line-clamp": this.num
                 }
               },
-              [context.children]
-            ),
-            h(
-              "div",
-              {
-                class: "after",
-                style: {
-                  width: fontSize * 1.25 + "px",
-                  height: fontSize * 1.25 + "px"
-                }
-              },
-              "..."
+              this.$slots.default
             )
-          ]
+          );
+        } else {
+          tempNodes.push(
+            h(
+              "div",
+              {
+                class: "lr-ellipse-font"
+              },
+              this.$slots.default
+            )
+          );
+        }
+      } else {
+        tempNodes.push(
+          h(
+            "div",
+            {
+              class: "lr-ellipse-font ellipse-font-wrap single-ellipsis"
+            },
+            this.$slots.default
+          )
         );
       }
-    } else {
+    }
+    if (this.tooltipFlag) {
+      let text =
+        this.$slots.default.length > 0 ? this.$slots.default[0].text : "";
       return h(
-        "div",
+        LrTooltip,
         {
-          class: "ellipse-font-wrap single-ellipsis"
+          props: {
+            content: text
+          }
         },
-        [context.children]
+        tempNodes
       );
+    } else {
+      return tempNodes[0];
     }
   }
 };

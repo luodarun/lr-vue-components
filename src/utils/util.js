@@ -272,3 +272,37 @@ export const getBrowserType = function(needVersion) {
     return "Chrome";
   }
 };
+export const formatStr = (ele, type, num) => {
+  let content = ele.innerHTML;
+  let totalTextLen = content.length;
+  let style = window.getComputedStyle(ele);
+  const baseWidth = style.width;
+  const baseFontSize = style.fontSize;
+  const baseLineHeight =
+    style.lineHeight === "normal" ? baseFontSize : style.lineHeight;
+  const lineWidth = +baseWidth.slice(0, -2);
+  const strNum = Math.floor(lineWidth / +baseFontSize.slice(0, -2));
+
+  if (type === "1") {
+    // 字数判断
+    if (totalTextLen > num) {
+      content = content.slice(0, num).concat("...");
+    }
+  } else if (type === "2") {
+    // 行数判断
+    const totalStrNum = Math.floor(strNum * num); // 多行可容纳总字数
+    const lastIndex = totalStrNum - totalTextLen;
+    if (totalTextLen > totalStrNum) {
+      content = content.slice(0, lastIndex - 3).concat("...");
+    }
+  } else if (type === "3") {
+    // 高度判断
+    let row = Math.ceil(num / parseInt(baseLineHeight));
+    const totalStrNum = Math.floor(strNum * row); // 多行可容纳总字数
+    const lastIndex = totalStrNum - totalTextLen;
+    if (totalTextLen > totalStrNum) {
+      content = content.slice(0, lastIndex - 1).concat("...");
+    }
+  }
+  ele.innerHTML = content;
+};
