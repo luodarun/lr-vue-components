@@ -6,8 +6,6 @@ node_modules
 # local env files
 .env.local
 .env.*.local
-vue.config.js
-babel.config.js
 *.map
 
 # Log files

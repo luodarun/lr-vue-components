@@ -15,6 +15,10 @@ export default {
     tooltipFlag: {
       type: Boolean,
       default: false
+    },
+    needOpen: {
+      type: Boolean,
+      default: false
     }
   },
   data() {
@@ -95,5 +99,9 @@ export default {
     } else {
       return tempNodes[0];
     }
+    // if (!this.tooltipFlag && this.needOpen) {
+    // } else {
+    //   return tempNodes[0];
+    // }
   }
 };

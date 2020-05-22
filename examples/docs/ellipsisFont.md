@@ -31,3 +31,4 @@
 | type     | 类型,1代表按照字数来省略，2代表行数，3代表高度   | string  |   1 / 2 / 3            |    2     |
 | num     | 与类型相关的数量   | number    |    |     1    |
 | tooltipFlag     | 是否有浮框   | boolean    | — | false   |
+| needOpen     | 是否可以下拉展开，设置了tooltipFlag这个不会起作用   | boolean    | — | false   |

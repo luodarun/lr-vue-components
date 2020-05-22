@@ -12,7 +12,8 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "lib": "vue-cli-service build --target lib --name lrvuecoms --dest lib packages/index.js",
-    "build": "vue-cli-service build",
+    "build:lib": "vue-cli-service build --mode lib",
+    "build:docs": "vue-cli-service build --mode docs",
     "build:class": "node build/gen-cssfile && gulp build --gulpfile packages/theme-chalk/gulpfile.js && cp-cli packages/theme-chalk/lib lib/theme-chalk",
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint"
