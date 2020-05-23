@@ -19,7 +19,6 @@
     <div
       class="demo-block-control"
       ref="control"
-      :class="{ 'is-fixed': fixedControl }"
       @click="isExpanded = !isExpanded"
     >
       <transition name="arrow-slide">
@@ -190,18 +189,17 @@ export default {
   },
 
   methods: {
-    scrollHandler() {
-      const { top, bottom, left } = this.$refs.meta.getBoundingClientRect();
-      this.fixedControl =
-        bottom > document.documentElement.clientHeight &&
-        top + 44 <= document.documentElement.clientHeight;
-      this.$refs.control.style.left = this.fixedControl ? `${left}px` : "0";
-    },
-
-    removeScrollHandler() {
-      this.scrollParent &&
-        this.scrollParent.removeEventListener("scroll", this.scrollHandler);
-    }
+    // scrollHandler() {
+    //   const { top, bottom, left } = this.$refs.meta.getBoundingClientRect();
+    //   this.fixedControl =
+    //     bottom > document.documentElement.clientHeight &&
+    //     top + 44 <= document.documentElement.clientHeight;
+    //   this.$refs.control.style.left = this.fixedControl ? `${left}px` : "0";
+    // },
+    // removeScrollHandler() {
+    //   this.scrollParent &&
+    //     this.scrollParent.removeEventListener("scroll", this.scrollHandler);
+    // }
   },
 
   computed: {
@@ -280,10 +278,6 @@ export default {
         highlight.borderRight = "none";
       }
     });
-  },
-
-  beforeDestroy() {
-    this.removeScrollHandler();
   }
 };
 </script>

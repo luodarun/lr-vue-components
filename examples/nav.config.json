@@ -50,18 +50,18 @@
           "path": "/layout"
         },
         {
-          "desc": "Tooltip 布局",
+          "desc": "Tooltip 文字浮框",
           "name": "tooltip",
           "isMobile": "1",
           "path": "/tooltip"
         },
         {
-          "desc": "Popover 布局",
+          "desc": "Popover 卡片浮框",
           "name": "popover",
           "path": "/popover"
         },
         {
-          "desc": "Table 布局",
+          "desc": "Table 表格",
           "name": "table",
           "path": "/table"
         },
@@ -81,12 +81,12 @@
           "path": "/checkbox"
         },
         {
-          "desc": "Input 复选框",
+          "desc": "Input 输入框",
           "name": "input",
           "path": "/input"
         },
         {
-          "desc": "Select 复选框",
+          "desc": "Select 选择框",
           "name": "select",
           "path": "/select"
         }

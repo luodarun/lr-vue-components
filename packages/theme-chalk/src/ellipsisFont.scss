@@ -1,12 +1,23 @@
-.ellipse-font-wrap {
+@include b(ellipsis-font) {
+  position: relative;
+  @include e(icon) {
+    color: $--button-primary-background-color;
+    cursor: pointer;
+    margin-left: 0.5em;
+    position: absolute;
+    bottom: 2px;
+    right: 0;
+    background: #fff;
+    transition: all 3s;
+  }  
+}
+.ellipsis-font-wrap {
   display: inline-block;
   width: 100%;
   word-break: break-all;
 }
 .single-ellipsis {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  @include utils-ellipsis;
 }
 .multer-ellipsis {
   display: -webkit-box;

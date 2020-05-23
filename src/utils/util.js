@@ -272,8 +272,12 @@ export const getBrowserType = function(needVersion) {
     return "Chrome";
   }
 };
-export const formatStr = (ele, type, num) => {
-  let content = ele.innerHTML;
+export const formatStr = (ele, type, num, needOpen, openFlag, text) => {
+  if (needOpen && openFlag) {
+    ele.innerHTML = text;
+    return;
+  }
+  let content = text;
   let totalTextLen = content.length;
   let style = window.getComputedStyle(ele);
   const baseWidth = style.width;
@@ -303,6 +307,9 @@ export const formatStr = (ele, type, num) => {
     if (totalTextLen > totalStrNum) {
       content = content.slice(0, lastIndex - 1).concat("...");
     }
+  }
+  if (needOpen) {
+    content = content.slice(0, content.length - 3);
   }
   ele.innerHTML = content;
 };
