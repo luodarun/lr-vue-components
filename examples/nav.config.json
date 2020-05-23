@@ -91,6 +91,16 @@
           "path": "/select"
         }
       ]
+    },
+    {
+      "desc": "业务组件",
+      "items": [
+        {
+          "desc": "CountUp 数字滚动",
+          "name": "countUp",
+          "path": "/countUp"
+        }
+      ]
     }
   ]
 }

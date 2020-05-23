@@ -244,9 +244,9 @@ export default {
         this.scrollParent = document.querySelector(
           ".page-component__scroll > .el-scrollbar__wrap"
         );
-        this.scrollParent &&
-          this.scrollParent.addEventListener("scroll", this.scrollHandler);
-        this.scrollHandler();
+        // this.scrollParent &&
+        //   this.scrollParent.addEventListener("scroll", this.scrollHandler);
+        // this.scrollHandler();
       }, 200);
     }
   },

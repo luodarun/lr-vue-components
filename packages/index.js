@@ -20,6 +20,7 @@ import OptionGroup from './option-group';
 import Popover from './popover';
 import Autocomplete from './autocomplete';
 import EllipsisFont from './ellipsisFont';
+import CountUp from './countup';
 const version = '0.1.0';
 const components = [
   Button,
@@ -41,7 +42,8 @@ const components = [
   Select,
   Input,
   Autocomplete,
-  EllipsisFont
+  EllipsisFont,
+  CountUp
 ];
 const install = Vue => {
   components.forEach(Component => {
@@ -74,7 +76,8 @@ export {
   Select,
   Input,
   Autocomplete,
-  EllipsisFont
+  EllipsisFont,
+  CountUp
 }
 export default {
   install,

@@ -9,6 +9,7 @@ export default {
       default: "div"
     },
     gutter: Number,
+    spacing: Number,
     type: String,
     justify: {
       type: String,

@@ -19,25 +19,50 @@ export default {
     lg: [Number, Object],
     xl: [Number, Object]
   },
-
   computed: {
-    gutter() {
+    gutterAndSpacing() {
       let parent = this.$parent;
       while (parent && parent.$options.componentName !== "LrRow") {
         parent = parent.$parent;
       }
-      return parent ? parent.gutter : 0;
+      return parent
+        ? { gutter: parent.gutter, spacing: parent.spacing }
+        : { gutter: 0, spacing: 0 };
+    },
+    selfParent() {
+      let parent = this.$parent;
+      while (parent && parent.$options.componentName !== "LrRow") {
+        parent = parent.$parent;
+      }
+      return parent;
     }
   },
   render(h) {
     let classList = [];
     let style = {};
 
-    if (this.gutter) {
-      style.paddingLeft = this.gutter / 2 + "px";
+    if (this.gutterAndSpacing.gutter) {
+      style.paddingLeft = this.gutterAndSpacing.gutter / 2 + "px";
       style.paddingRight = style.paddingLeft;
     }
-
+    if (this.selfParent && this.gutterAndSpacing.spacing) {
+      let childLength = this.selfParent.$slots.default
+        ? (this.selfParent.$slots.default.length + 1) / 2 || 0
+        : 0;
+      let childLength2 = this.selfParent.$children
+        ? this.selfParent.$children.length || 0
+        : 0;
+      if (childLength > 1) {
+        style.width = `calc(${(this.span * 100) / 24}% - ${(this
+          .gutterAndSpacing.spacing *
+          (childLength - 1)) /
+          childLength}px)`;
+        style.marginRight =
+          childLength2 !== childLength
+            ? `${this.gutterAndSpacing.spacing}px`
+            : "";
+      }
+    }
     ["span", "offset", "pull", "push"].forEach(prop => {
       if (this[prop] || this[prop] === 0) {
         classList.push(
@@ -62,7 +87,6 @@ export default {
         });
       }
     });
-
     return h(
       this.tag,
       {

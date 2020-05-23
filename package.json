@@ -21,6 +21,7 @@
   "dependencies": {
     "-": "0.0.1",
     "D": "^1.0.0",
+    "countup.js": "^2.0.5",
     "resize-observer-polyfill": "^1.5.1",
     "throttle-debounce": "^2.1.0",
     "uppercamelcase": "^3.0.0",
