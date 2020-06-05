@@ -1,6 +1,6 @@
 {
   "name": "lr-vue-components",
-  "version": "0.1.5",
+  "version": "0.2.0",
   "private": false,
   "description": "lr-vue组件库",
   "license": "MIT",
@@ -8,14 +8,15 @@
   "files": [
     "lib"
   ],
-  "keyword": "lr 神州友创",
+  "keyword": "lr",
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "serve": "node build/build-entry.js && node build/gen-cssfile.js && vue-cli-service serve",
     "lib": "vue-cli-service build --target lib --name lrvuecoms --dest lib packages/index.js",
     "build:lib": "vue-cli-service build --mode lib",
     "build:docs": "vue-cli-service build --mode docs",
     "build:class": "node build/gen-cssfile && gulp build --gulpfile packages/theme-chalk/gulpfile.js && cp-cli packages/theme-chalk/lib lib/theme-chalk",
     "test:unit": "vue-cli-service test:unit",
+    "release": "sh release.sh",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
@@ -56,6 +57,7 @@
     "prettier": "^1.18.2",
     "saladcss-bem": "0.0.2",
     "sass-loader": "^8.0.0",
+    "shelljs": "^0.8.4",
     "transliteration": "^2.1.8",
     "vue-markdown-loader": "^2.4.1",
     "vue-router": "^3.1.6",

@@ -4,7 +4,7 @@ function resolve(dir) {
 }
 module.exports = {
   publicPath: "./",
-  outputDir: resolve("../dist"),
+  outputDir: resolve("../lr-ui"),
   pages: {
     index: {
       entry: "examples/main.js",

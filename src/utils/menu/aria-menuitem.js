@@ -1,5 +1,5 @@
-import Utils from '../aria-utils';
-import SubMenu from './aria-submenu';
+import Utils from "../aria-utils";
+import SubMenu from "./aria-submenu";
 
 const MenuItem = function(domNode) {
   this.domNode = domNode;
@@ -8,8 +8,8 @@ const MenuItem = function(domNode) {
 };
 
 MenuItem.prototype.init = function() {
-  this.domNode.setAttribute('tabindex', '0');
-  let menuChild = this.domNode.querySelector('.el-menu');
+  this.domNode.setAttribute("tabindex", "0");
+  let menuChild = this.domNode.querySelector(".el-menu");
   if (menuChild) {
     this.submenu = new SubMenu(this, menuChild);
   }
@@ -18,21 +18,22 @@ MenuItem.prototype.init = function() {
 
 MenuItem.prototype.addListeners = function() {
   const keys = Utils.keys;
-  this.domNode.addEventListener('keydown', event => {
+  this.domNode.addEventListener("keydown", event => {
     let prevDef = false;
     switch (event.keyCode) {
       case keys.down:
-        Utils.triggerEvent(event.currentTarget, 'mouseenter');
+        Utils.triggerEvent(event.currentTarget, "mouseenter");
         this.submenu && this.submenu.gotoSubIndex(0);
         prevDef = true;
         break;
       case keys.up:
-        Utils.triggerEvent(event.currentTarget, 'mouseenter');
-        this.submenu && this.submenu.gotoSubIndex(this.submenu.subMenuItems.length - 1);
+        Utils.triggerEvent(event.currentTarget, "mouseenter");
+        this.submenu &&
+          this.submenu.gotoSubIndex(this.submenu.subMenuItems.length - 1);
         prevDef = true;
         break;
       case keys.tab:
-        Utils.triggerEvent(event.currentTarget, 'mouseleave');
+        Utils.triggerEvent(event.currentTarget, "mouseleave");
         break;
       case keys.enter:
       case keys.space:

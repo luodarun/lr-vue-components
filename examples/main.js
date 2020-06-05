@@ -4,11 +4,6 @@ import App from "./App.vue";
 import hljs from "highlight.js";
 import LrUI from "../packages/index";
 import "../packages/theme-chalk/src/index.scss";
-// 导入组件库
-// import ColorPicker from "./../packages/index";
-// console.log("ColorPicker", ColorPicker.ColorPicker);
-// // 注册组件库
-// Vue.use(ColorPicker.ColorPicker);
 import demoBlock from "./components/demo-block.vue";
 // const Demos = [];
 

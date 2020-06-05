@@ -12,16 +12,21 @@ const tips = `/* eslint-disable */
 // This file is auto gererated by build/build-entry.js`;
 
 function buildPackagesEntry() {
-  const uninstallComponents = [];
+  const uninstallComponents = ["MessageBox", "Message"];
   const importList = Components.map(
     name => `import ${uppercamelcase(name)} from './${name}'`
+  );
+  importList.push(
+    "import CollapseTransition from '../src/transitions/collapse-transition'",
+    "import directives from '../src/directives/index'"
   );
   const exportList = Components.map(name => `${uppercamelcase(name)}`);
   const installList = exportList.filter(
     // exportList中有的全部给了
     name => !~uninstallComponents.indexOf(uppercamelcase(name))
   );
-
+  installList.push("CollapseTransition", "directives");
+  exportList.push("CollapseTransition", "directives");
   const content = `${tips}
 ${importList.join("\n")};
   const version = '${version}';
@@ -31,7 +36,12 @@ ${importList.join("\n")};
   const install = Vue => {
     components.forEach(Component => {
       Vue.use(Component)
-    })
+    });
+    Vue.prototype.$msgbox = MessageBox;
+    Vue.prototype.$alert = MessageBox.alert;
+    Vue.prototype.$confirm = MessageBox.confirm;
+    Vue.prototype.$prompt = MessageBox.prompt;
+    Vue.prototype.$message = Message;
   };
   /* istanbul ignore if */
 if (typeof window !== 'undefined' && window.Vue) {

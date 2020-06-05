@@ -37,6 +37,31 @@ Vue.use(LrUI)
 可以局部注册所需的组件，适用于与其他框架组合使用的场景
 <!-- {.md} -->
 
+借助 [babel-plugin-component](https://github.com/QingWei-Li/babel-plugin-component)，我们可以只引入需要的组件，以达到减小项目体积的目的。
+
+首先，安装 babel-plugin-component：
+
+```bash
+npm install babel-plugin-component -D
+```
+
+然后，将 .babelrc 修改为：
+
+```json
+{
+  "presets": [["es2015", { "modules": false }]],
+  "plugins": [
+    [
+      "component",
+      {
+        "libraryName": "lr-ui",
+        "styleLibraryName": "theme-chalk"
+      }
+    ]
+  ]
+}
+```
+
 ```js
 
 import { Button } from 'lr-vue-components'

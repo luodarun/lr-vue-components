@@ -4,9 +4,10 @@ export default {
   bind(el, binding, vnode) {
     let interval = null;
     let startTime;
-    const handler = () => vnode.context[binding.expression].apply();
+    const { callbackFn, delayTime } = binding.value;
+    const handler = () => vnode.context[callbackFn].apply();
     const clear = () => {
-      if (Date.now() - startTime < 100) {
+      if (Date.now() - startTime < delayTime) {
         handler();
       }
       clearInterval(interval);
@@ -18,7 +19,7 @@ export default {
       startTime = Date.now();
       once(document, "mouseup", clear);
       clearInterval(interval);
-      interval = setInterval(handler, 100);
+      interval = setInterval(handler, delayTime);
     });
   }
 };

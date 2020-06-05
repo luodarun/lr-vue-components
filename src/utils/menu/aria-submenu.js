@@ -1,4 +1,4 @@
-import Utils from '../aria-utils';
+import Utils from "../aria-utils";
 
 const SubMenu = function(parent, domNode) {
   this.domNode = domNode;
@@ -9,7 +9,7 @@ const SubMenu = function(parent, domNode) {
 };
 
 SubMenu.prototype.init = function() {
-  this.subMenuItems = this.domNode.querySelectorAll('li');
+  this.subMenuItems = this.domNode.querySelectorAll("li");
   this.addListeners();
 };
 
@@ -27,7 +27,7 @@ SubMenu.prototype.addListeners = function() {
   const keys = Utils.keys;
   const parentNode = this.parent.domNode;
   Array.prototype.forEach.call(this.subMenuItems, el => {
-    el.addEventListener('keydown', event => {
+    el.addEventListener("keydown", event => {
       let prevDef = false;
       switch (event.keyCode) {
         case keys.down:
@@ -39,7 +39,7 @@ SubMenu.prototype.addListeners = function() {
           prevDef = true;
           break;
         case keys.tab:
-          Utils.triggerEvent(parentNode, 'mouseleave');
+          Utils.triggerEvent(parentNode, "mouseleave");
           break;
         case keys.enter:
         case keys.space:

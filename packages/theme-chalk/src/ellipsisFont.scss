@@ -1,3 +1,7 @@
+@import "common/var";
+@import "mixins/mixins";
+@import "mixins/utils";
+
 @include b(ellipsis-font) {
   position: relative;
   @include e(icon) {

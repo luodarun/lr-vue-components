@@ -1,8 +1,7 @@
 var fs = require("fs");
 var path = require("path");
-var Components = require("../components.json");
 var themes = ["theme-chalk"];
-Components = Object.keys(Components);
+var Components = require("./get-components")();
 var basepath = path.resolve(__dirname, "../packages/");
 
 function fileExists(filePath) {

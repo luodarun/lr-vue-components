@@ -237,7 +237,7 @@ export default {
       if (!val) {
         this.fixedControl = false;
         this.$refs.control.style.left = "0";
-        this.removeScrollHandler();
+        // this.removeScrollHandler();
         return;
       }
       setTimeout(() => {

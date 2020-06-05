@@ -15,10 +15,14 @@
       "desc": "快速上手"
     },
     {
-      "name": "index",
-      "isMobile": "1",
-      "path": "/index",
-      "type": "pages"
+      "name": "transition",
+      "path": "/transition",
+      "desc": "内置过度动画"
+    },
+    {
+      "name": "directives",
+      "path": "/directives",
+      "desc": "内置指令"
     }
   ],
   "组件": [
@@ -44,16 +48,15 @@
           "path": "/tag"
         },
         {
-          "desc": "Layout 布局",
-          "name": "layout",
-          "isMobile": "1",
-          "path": "/layout"
-        },
-        {
           "desc": "Tooltip 文字浮框",
           "name": "tooltip",
           "isMobile": "1",
           "path": "/tooltip"
+        },
+        {
+          "desc": "Dropdown 下拉菜单",
+          "name": "dropdown",
+          "path": "/dropdown"
         },
         {
           "desc": "Popover 卡片浮框",
@@ -69,12 +72,57 @@
           "desc": "EllipsisFont 缩略行",
           "name": "ellipsisFont",
           "path": "/ellipsisFont"
+        },
+        {
+          "desc": "Message 全局消息",
+          "name": "message",
+          "path": "/message"
+        },
+        {
+          "desc": "MessageBox 消息盒子",
+          "name": "message-box",
+          "path": "/message-box"
+        },
+        {
+          "desc": "Dialog 弹窗",
+          "name": "dialog",
+          "path": "/dialog"
+        }
+      ]
+    },
+    {
+      "desc": "布局组件",
+      "items": [
+        {
+          "desc": "Layout 布局",
+          "name": "layout",
+          "path": "/layout"
+        },
+        {
+          "desc": "Container 布局容器",
+          "name": "container",
+          "path": "/container"
+        },
+        {
+          "desc": "Menu 导航菜单",
+          "name": "menu",
+          "path": "/menu"
         }
       ]
     },
     {
       "desc": "表单组件",
       "items": [
+        {
+          "desc": "Form 表单",
+          "name": "form",
+          "path": "/form"
+        },
+        {
+          "desc": "Radio 单选框",
+          "name": "radio",
+          "path": "/radio"
+        },
         {
           "desc": "CheckBox 复选框",
           "name": "checkbox",
