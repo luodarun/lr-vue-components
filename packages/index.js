@@ -11,6 +11,7 @@ import Col from './col'
 import Container from './container'
 import Countup from './countup'
 import Dialog from './dialog'
+import Drawer from './drawer'
 import Dropdown from './dropdown'
 import DropdownItem from './dropdown-item'
 import DropdownMenu from './dropdown-menu'
@@ -37,6 +38,7 @@ import Row from './row'
 import Scrollbar from './scrollbar'
 import Select from './select'
 import Submenu from './submenu'
+import Surface from './surface'
 import Table from './table'
 import TableColumn from './table-column'
 import Tag from './tag'
@@ -56,6 +58,7 @@ import directives from '../src/directives/index';
     Container,
     Countup,
     Dialog,
+    Drawer,
     Dropdown,
     DropdownItem,
     DropdownMenu,
@@ -80,6 +83,7 @@ import directives from '../src/directives/index';
     Scrollbar,
     Select,
     Submenu,
+    Surface,
     Table,
     TableColumn,
     Tag,
@@ -115,6 +119,7 @@ export {
   Container,
   Countup,
   Dialog,
+  Drawer,
   Dropdown,
   DropdownItem,
   DropdownMenu,
@@ -141,6 +146,7 @@ export {
   Scrollbar,
   Select,
   Submenu,
+  Surface,
   Table,
   TableColumn,
   Tag,

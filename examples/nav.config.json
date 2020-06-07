@@ -87,6 +87,11 @@
           "desc": "Dialog 弹窗",
           "name": "dialog",
           "path": "/dialog"
+        },
+        {
+          "desc": "Drawer 弹窗",
+          "name": "drawer",
+          "path": "/drawer"
         }
       ]
     },
@@ -147,6 +152,11 @@
           "desc": "CountUp 数字滚动",
           "name": "countUp",
           "path": "/countUp"
+        },
+        {
+          "desc": "Surface 系统框架",
+          "name": "surface",
+          "path": "/surface"
         }
       ]
     }
