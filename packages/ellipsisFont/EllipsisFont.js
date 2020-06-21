@@ -29,7 +29,8 @@ export default {
     return {
       browType: getBrowserType(),
       showDown: false,
-      isOpen: false
+      isOpen: false,
+      reallyNeedElliseIcon: false
     };
   },
   mounted() {
@@ -46,7 +47,7 @@ export default {
         this.type !== "2" ||
         this.needOpen
       ) {
-        formatStr(
+        this.reallyNeedElliseIcon = formatStr(
           this.$refs.ellipsisContent,
           this.type,
           this.num,
@@ -64,7 +65,7 @@ export default {
     },
     handleDownClick() {
       this.isOpen = !this.isOpen;
-      formatStr(
+      this.reallyNeedElliseIcon = formatStr(
         this.$refs.ellipsisContent,
         this.type,
         this.num,
@@ -110,6 +111,9 @@ export default {
               ),
               h("i", {
                 class: ["lr-ellipsis-font__icon", tempClassList],
+                style: {
+                  display: this.reallyNeedElliseIcon ? "inline" : "none"
+                },
                 on: {
                   click: this.handleDownClick
                 }

@@ -1,0 +1,37 @@
+@import 'mixins/mixins';
+@keyframes lr-skeleton-loading {
+  0% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+
+@include b(skeleton) {
+  &-rect,
+  &-circle {
+    background-size: 400% 100%;
+    background-color: #f2f2f2;
+    margin: 0;
+  }
+
+  &-ani {
+    animation: lr-skeleton-loading 1.4s ease infinite;
+    background: linear-gradient(90deg, #f2f2f2 25%, #e6e6e6 37%, #f2f2f2 63%);
+    background-size: 400% 100%;
+  }
+
+  &-col-container {
+    display: flex;
+  }
+
+  &-col,
+  &-row {
+    margin: 0;
+  }
+
+  &-circle {
+    border-radius: 100%;
+  }
+}

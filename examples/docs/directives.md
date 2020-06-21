@@ -105,3 +105,31 @@
 ```
 
 :::
+
+### InfiniteScroll 无限滚动
+
+在要实现滚动加载的列表上上添加`v-infinite-scroll`，并赋值相应的加载方法，可实现滚动到底部时自动执行加载方法。
+:::demo
+```html
+<template>
+  <ul class="infinite-list" infinite-scroll-sourceArray="count" v-infinite-scroll="load" style="overflow:auto">
+    <li v-for="i in count" class="infinite-list-item">{{ i }}</li>
+  </ul>
+</template>
+
+<script>
+  export default {
+    data () {
+      return {
+        count: 0
+      }
+    },
+    methods: {
+      load () {
+        this.count += 2
+      }
+    }
+  }
+</script>
+```
+:::

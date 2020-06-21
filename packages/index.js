@@ -21,6 +21,7 @@ import Form from './form'
 import FormItem from './form-item'
 import Header from './header'
 import Icon from './icon'
+import InfiniteScroll from './infiniteScroll'
 import Input from './input'
 import Main from './main'
 import Menu from './menu'
@@ -37,6 +38,8 @@ import RadioGroup from './radio-group'
 import Row from './row'
 import Scrollbar from './scrollbar'
 import Select from './select'
+import Signature from './signature'
+import Skeleton from './skeleton'
 import Submenu from './submenu'
 import Surface from './surface'
 import Table from './table'
@@ -68,6 +71,7 @@ import directives from '../src/directives/index';
     FormItem,
     Header,
     Icon,
+    InfiniteScroll,
     Input,
     Main,
     Menu,
@@ -82,6 +86,8 @@ import directives from '../src/directives/index';
     Row,
     Scrollbar,
     Select,
+    Signature,
+    Skeleton,
     Submenu,
     Surface,
     Table,
@@ -129,6 +135,7 @@ export {
   FormItem,
   Header,
   Icon,
+  InfiniteScroll,
   Input,
   Main,
   Menu,
@@ -145,6 +152,8 @@ export {
   Row,
   Scrollbar,
   Select,
+  Signature,
+  Skeleton,
   Submenu,
   Surface,
   Table,

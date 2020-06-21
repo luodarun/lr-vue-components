@@ -157,6 +157,21 @@
           "desc": "Surface 系统框架",
           "name": "surface",
           "path": "/surface"
+        },
+        {
+          "desc": "InfiniteScroll 虚拟列表",
+          "name": "infiniteScroll",
+          "path": "/infiniteScroll"
+        },
+        {
+          "desc": "Skeleton 骨架屏",
+          "name": "skeleton",
+          "path": "/skeleton"
+        },
+        {
+          "desc": "Signature 电子签名",
+          "name": "signature",
+          "path": "/signature"
         }
       ]
     }

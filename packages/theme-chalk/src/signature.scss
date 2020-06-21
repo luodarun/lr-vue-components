@@ -1,0 +1,5 @@
+@import 'mixins/mixins';
+
+@include b(signature) {
+  border: 1px solid #ccc;
+}
